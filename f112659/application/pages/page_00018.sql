@@ -1,0 +1,173 @@
+prompt --application/pages/page_00018
+begin
+--   Manifest
+--     PAGE: 00018
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>41592241009218758396
+,p_default_application_id=>112659
+,p_default_id_offset=>0
+,p_default_owner=>'SUANWORKSPACE'
+);
+wwv_flow_api.create_page(
+ p_id=>18
+,p_user_interface_id=>wwv_flow_api.id(15025661776907616811)
+,p_name=>'Dashboard '
+,p_alias=>'DASHBOARD'
+,p_step_title=>'Dashboard '
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_last_updated_by=>'CHINDU_RICE'
+,p_last_upd_yyyymmddhh24miss=>'20201210224108'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(17309010482982368731)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader:t-Region--noUI:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(15025576284514616743)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_06'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43035588959071895708)
+,p_plug_name=>'Animal types'
+,p_region_css_classes=>'margin-sm'
+,p_region_template_options=>'#DEFAULT#:i-h480:t-Region--accent5:t-Region--stacked:t-Region--scrollBody:margin-top-md'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(15025576284514616743)
+,p_plug_display_sequence=>40
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_new_grid_row=>false
+,p_plug_display_point=>'BODY'
+,p_query_type=>'TABLE'
+,p_query_table=>'ANIMALTYPE'
+,p_query_order_by=>'TYPE'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_JQM_LIST_VIEW'
+,p_plug_query_num_rows=>15
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_02=>'TYPE'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43035589329345895712)
+,p_plug_name=>'Staff members'
+,p_region_template_options=>'#DEFAULT#:t-Region--accent5:t-Region--stacked:t-Region--scrollBody:margin-top-md'
+,p_plug_template=>wwv_flow_api.id(15025576284514616743)
+,p_plug_display_sequence=>30
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43035589491120895713)
+,p_plug_name=>'Staff members card'
+,p_parent_plug_id=>wwv_flow_api.id(43035589329345895712)
+,p_region_template_options=>'#DEFAULT#:t-CardsRegion--styleB'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(15025551095700616724)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'BODY'
+,p_query_type=>'TABLE'
+,p_query_table=>'STAFF'
+,p_include_rowid_column=>false
+,p_lazy_loading=>false
+,p_plug_source_type=>'NATIVE_CARDS'
+,p_plug_query_num_rows_type=>'SCROLL'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_show_total_row_count=>false
+);
+wwv_flow_api.create_card(
+ p_id=>wwv_flow_api.id(43035589551628895714)
+,p_region_id=>wwv_flow_api.id(43035589491120895713)
+,p_layout_type=>'GRID'
+,p_title_adv_formatting=>false
+,p_title_column_name=>'LASTNAME'
+,p_sub_title_adv_formatting=>false
+,p_sub_title_column_name=>'FIRSTNAME'
+,p_body_adv_formatting=>false
+,p_body_column_name=>'CONTACTEMAIL'
+,p_second_body_adv_formatting=>false
+,p_icon_source_type=>'STATIC_CLASS'
+,p_icon_css_classes=>'fa-universal-access'
+,p_icon_position=>'START'
+,p_media_adv_formatting=>false
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43035592533770895744)
+,p_plug_name=>'Animals fostered and available'
+,p_region_template_options=>'#DEFAULT#:t-Region--accent5:t-Region--stacked:t-Region--scrollBody'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(15025576284514616743)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'BODY'
+,p_query_type=>'TABLE'
+,p_query_table=>'ANIMAL'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+,p_plug_query_num_rows=>15
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_header=>'Legend: (Y) Available (N) Not Available'
+);
+wwv_flow_api.create_jet_chart(
+ p_id=>wwv_flow_api.id(43035592691204895745)
+,p_region_id=>wwv_flow_api.id(43035592533770895744)
+,p_chart_type=>'pie'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_value_format_type=>'decimal'
+,p_value_decimal_places=>0
+,p_value_format_scaling=>'none'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'auto'
+,p_pie_other_threshold=>0
+,p_pie_selection_effect=>'highlight'
+);
+wwv_flow_api.create_jet_chart_series(
+ p_id=>wwv_flow_api.id(43035592714194895746)
+,p_chart_id=>wwv_flow_api.id(43035592691204895745)
+,p_seq=>10
+,p_name=>'animalsavailability'
+,p_data_source_type=>'TABLE'
+,p_query_table=>'ANIMAL'
+,p_include_rowid_column=>false
+,p_items_label_column_name=>'AVAILABLETOFOSTER'
+,p_aggregate_function=>'COUNT'
+,p_items_label_rendered=>true
+,p_items_label_position=>'auto'
+,p_items_label_display_as=>'LBL_VAL'
+,p_link_target=>'f?p=&APP_ID.:33:&SESSION.::&DEBUG.:::'
+,p_link_target_type=>'REDIRECT_PAGE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(43035592329975895742)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(17309010482982368731)
+,p_button_name=>'BackButton'
+,p_button_action=>'REDIRECT_URL'
+,p_button_template_options=>'#DEFAULT#:t-Button--large:t-Button--simple:t-Button--hoverIconPush:t-Button--pillStart'
+,p_button_template_id=>wwv_flow_api.id(15025638319655616792)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Back'
+,p_button_position=>'REGION_TEMPLATE_PREVIOUS'
+,p_button_redirect_url=>'javascript:history.go(-1)'
+,p_icon_css_classes=>'fa-arrow-left-alt'
+);
+wwv_flow_api.component_end;
+end;
+/

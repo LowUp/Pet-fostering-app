@@ -1,0 +1,104 @@
+prompt --application/pages/page_00024
+begin
+--   Manifest
+--     PAGE: 00024
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>41592241009218758396
+,p_default_application_id=>112659
+,p_default_id_offset=>0
+,p_default_owner=>'SUANWORKSPACE'
+);
+wwv_flow_api.create_page(
+ p_id=>24
+,p_user_interface_id=>wwv_flow_api.id(15025661776907616811)
+,p_name=>'Staff Report'
+,p_alias=>'STAFF-REPORT'
+,p_step_title=>'Staff Report'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'J.E.SUAN1210@CANTERBURY.AC.UK'
+,p_last_upd_yyyymmddhh24miss=>'20201211203759'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(16093054776643043870)
+,p_plug_name=>'Staff Report'
+,p_icon_css_classes=>'fa-user'
+,p_region_template_options=>'#DEFAULT#:t-CardsRegion--styleB:t-Form--slimPadding:t-Form--xlarge'
+,p_plug_template=>wwv_flow_api.id(15025551095700616724)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'BODY'
+,p_query_type=>'TABLE'
+,p_query_table=>'STAFF'
+,p_include_rowid_column=>false
+,p_lazy_loading=>false
+,p_plug_source_type=>'NATIVE_CARDS'
+,p_plug_query_num_rows=>15
+,p_plug_query_num_rows_type=>'SCROLL'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_show_total_row_count=>false
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+);
+wwv_flow_api.create_card(
+ p_id=>wwv_flow_api.id(16093055152073043871)
+,p_region_id=>wwv_flow_api.id(16093054776643043870)
+,p_layout_type=>'FLOAT'
+,p_title_adv_formatting=>false
+,p_title_column_name=>'FIRSTNAME'
+,p_sub_title_adv_formatting=>false
+,p_body_adv_formatting=>false
+,p_body_column_name=>'CONTACTEMAIL'
+,p_second_body_adv_formatting=>false
+,p_icon_source_type=>'INITIALS'
+,p_icon_class_column_name=>'STAFFID'
+,p_badge_column_name=>'LASTNAME'
+,p_media_adv_formatting=>false
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(17309010273583368729)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader:t-Region--noUI:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(15025576284514616743)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_06'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(43035592159289895740)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(17309010273583368729)
+,p_button_name=>'BackButton'
+,p_button_action=>'REDIRECT_URL'
+,p_button_template_options=>'#DEFAULT#:t-Button--large:t-Button--simple:t-Button--hoverIconPush:t-Button--pillStart'
+,p_button_template_id=>wwv_flow_api.id(15025638319655616792)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Back'
+,p_button_position=>'REGION_TEMPLATE_PREVIOUS'
+,p_button_redirect_url=>'javascript:history.go(-1)'
+,p_icon_css_classes=>'fa-arrow-left-alt'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(15457911561150796506)
+,p_name=>'P24_NEW'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(16093054776643043870)
+,p_prompt=>'Green Pasture Fostering Staff'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(15025637937558616791)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'Y'
+,p_attribute_03=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.component_end;
+end;
+/
